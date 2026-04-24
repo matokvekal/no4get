@@ -23,14 +23,14 @@ export class PeopleController {
 
   update = (req: AuthRequest, res: Response) => {
     try {
-      const person = peopleService.update(req.userId!, req.params.id, req.body);
+      const person = peopleService.update(req.userId!, req.params.id as string, req.body);
       res.json(person);
     } catch (e) { res.status(404).json({ error: (e as Error).message }); }
   };
 
   delete = (req: AuthRequest, res: Response) => {
     try {
-      peopleService.delete(req.userId!, req.params.id);
+      peopleService.delete(req.userId!, req.params.id as string);
       res.status(204).end();
     } catch (e) { res.status(404).json({ error: (e as Error).message }); }
   };
