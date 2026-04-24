@@ -1,0 +1,15 @@
+{
+  "name": "gift-vibes",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "start": "concurrently \"npm start --prefix server\" \"npm start --prefix client\"",
+    "test": "cypress run --headless",
+    "test:open": "cypress open"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "cypress": "^15.0.0",
+    "typescript": "^5.8.3"
+  }
+}
