@@ -14,7 +14,12 @@ import ordersRoutes from './routes/orders.routes';
 dotenv.config();
 
 const app = express();
-app.use(cors({ origin: 'http://localhost:5000', credentials: true }));
+const allowedOrigins = [
+  'http://localhost:5000',
+  'http://localhost:5173',
+  /https:\/\/.*\.netlify\.app$/,
+];
+app.use(cors({ origin: allowedOrigins, credentials: true }));
 app.use(express.json());
 app.use(logger);
 
