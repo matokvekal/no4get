@@ -70,18 +70,16 @@ export function OnboardingPage() {
             <button className="btn btn-ghost w-full" onClick={() => setMode('login')}>
               I already have an account
             </button>
-            {import.meta.env.DEV && (
-              <button
-                className="btn onboarding__dev-login w-full"
-                onClick={async () => {
-                  const user = await storeLogin('rotem@example.com', 'password123');
-                  ctxLogin(user);
-                  navigate('/');
-                }}
-              >
-                ⚡ Dev Login
-              </button>
-            )}
+            <button
+              className="btn onboarding__dev-login w-full"
+              onClick={async () => {
+                const user = await storeLogin('rotem@example.com', 'password123');
+                ctxLogin(user);
+                navigate('/');
+              }}
+            >
+              ⚡ Dev Login
+            </button>
           </div>
 
           <p className="onboarding__hint">Curating meaningful connections since 2024</p>
